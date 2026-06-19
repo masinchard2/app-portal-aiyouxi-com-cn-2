@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 – 站点介绍与说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #1e2a3a;
+            line-height: 1.7;
+        }
+        /* 深色头图 – Hero 区 */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2e 0%, #1b2f44 100%);
+            color: #e7edf4;
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: #f5f7fa;
+            border-radius: 30px 30px 0 0;
+        }
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+        }
+        .hero-sub {
+            font-size: 1.2rem;
+            max-width: 640px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+        .hero-tagline {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* 浅色正文区 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: #0b1a2e;
+            border-left: 6px solid #3b7a9e;
+            padding-left: 1.2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #eef2f6;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #1e3b4f;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #3b4e62;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            max-width: 780px;
+            margin: 1.2rem 0 2rem;
+            color: #2a3e52;
+        }
+
+        .highlight-link {
+            color: #1f6f8f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .highlight-link:hover {
+            color: #0b4a66;
+            border-bottom: 1px solid #1f6f8f;
+        }
+
+        /* FAQ 摘要 */
+        .faq-list {
+            margin-top: 2rem;
+        }
+        .faq-item {
+            background: white;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #e4eaef;
+        }
+        .faq-item strong {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #0f2a3b;
+            font-weight: 600;
+        }
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #3f5568;
+        }
+
+        /* 底部 */
+        .footer {
+            background: #eef2f6;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #5a6e82;
+            border-top: 1px solid #dce4eb;
+        }
+        .footer a {
+            color: #1f6f8f;
+            text-decoration: none;
+            border-bottom: 1px dotted #b0c8d8;
+        }
+        .footer a:hover {
+            border-bottom: 1px solid #1f6f8f;
+        }
+
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-sub {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 1.5rem 1rem 3rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-title">爱游戏</div>
+    <div class="hero-sub">
+        一个关于游戏内容与社区信息的索引站点，保持克制与真实。
+    </div>
+    <div class="hero-tagline">✦ 站点介绍 · 可信说明</div>
+</section>
+
+<main class="container">
+    <section>
+        <h2 class="section-title">关于这个站点</h2>
+        <div class="intro-text">
+            <p>
+                “爱游戏”是一个以游戏信息索引与内容汇集为方向的个人维护项目。站点本身不存放任何游戏客户端或破解文件，也不提供直接下载渠道。
+                它的定位更像是一张经过梳理的目录页——把分散在公开网络中的游戏资讯、社区讨论、版本动态等线索，按照一定逻辑整理成可供参考的入口。
+                如果你恰好对某一款作品或某类玩法抱有好奇，这里或许能帮你省去一些零散搜索的时间。
+            </p>
+            <p style="margin-top: 1.2rem;">
+                站点运营至今始终遵循一个简单的原则：只整理、不编造。每一条链接或摘要都标注了原始出处，遇到拿不准的信息会明确标注“待核实”。
+                如果你在浏览过程中发现任何过时或存疑的内容，也欢迎通过页面底部的联系方式（站内信或邮件）提醒维护者修正。
+            </p>
+            <p style="margin-top: 1.2rem;">
+                你可以通过 <a href="https://app-portal-aiyouxi.com.cn" class="highlight-link">爱游戏</a> 直接访问当前首页，
+                所有公开栏目均可在导航区找到入口。
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">几个特点</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>按题材归类</h3>
+                <p>不按热度或赞助排序，而是根据游戏类型、世界观、玩法机制做索引。适合想找特定风格但不知道名字的玩家。</p>
+            </div>
+            <div class="card">
+                <h3>克制的信息密度</h3>
+                <p>每个条目只保留简介、截图链接（非本站托管）、版本号、更新日期与官方公告出处。不堆砌无关参数。</p>
+            </div>
+            <div class="card">
+                <h3>透明更新日志</h3>
+                <p>每一次添加或修正都会在 changelog 页面说明操作时间与动机，维护者自己的判断失误也会写进去。</p>
+            </div>
+            <div class="card">
+                <h3>无追踪、无广告</h3>
+                <p>页面内不嵌入第三方统计脚本或广告位，仅使用服务器日志（保留 7 天）做基础访问量统计，不采集个人身份信息。</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">适合哪些场景</h2>
+        <p style="margin-bottom: 1.5rem; color: #2a3e52;">
+            如果你只是想在睡前随便翻翻有什么冷门独立游戏；或者刚入手一台掌机，想找些适配的旧作；又或者你正在写一篇与游戏设计相关的文章，需要快速回溯某款作品的发展轨迹——<a href="https://app-portal-aiyouxi.com.cn" class="highlight-link">爱游戏</a> 的索引结构或许能提供一个不那么嘈杂的起点。
+        </p>
+    </section>
+
+    <section>
+        <h2 class="section-title">FAQ 摘要</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <strong>Q: 这里的游戏链接都来自哪里？</strong>
+                <p>A: 基本来自各游戏官方网站、Steam / itch.io / App Store 等公开商店页面，以及一些经过验证的社群维基。不收录任何疑似盗版或未授权的资源。</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q: 为什么有些游戏没有中文介绍？</strong>
+                <p>A: 部分作品本身只有英文或日文资料，站点会尽量保留原文标题并附带机器翻译摘要，同时标注“机翻仅供参考”。如果你愿意帮忙翻译，欢迎联系维护者。</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q: 站点会收录修改版或魔改版吗？</strong>
+                <p>A: 原则上不收录。除非该修改版已被原作者或版权方公开认可（例如某些官方授权的民间高清重置），否则一律不加入索引。</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q: 我发现一个链接失效了，怎么办？</strong>
+                <p>A: 可以直接在站点留言板提交失效链接，或者发送邮件到维护者邮箱（首页底部有显示），通常会在 3 个工作日内更新或替换。</p>
+            </div>
+        </div>
+        <p style="margin-top: 1.8rem; font-size: 0.95rem; color: #4b6177;">
+            更多常见问题请移步 <a href="https://app-portal-aiyouxi.com.cn" class="highlight-link">爱游戏</a> 的 FAQ 专页，那里有更完整的列表与历史存档。
+        </p>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>
+        <a href="https://app-portal-aiyouxi.com.cn">爱游戏</a> · 站点介绍与说明页面<br>
+        内容持续修订中 · 最近更新 2025-04 · 无广告 · 无追踪
+    </p>
+    <p style="margin-top: 0.6rem; font-size: 0.8rem; opacity: 0.7;">
+        * 本页面仅用于介绍站点性质与收录原则，不构成任何形式的使用建议或担保。
+    </p>
+</footer>
+
+</body>
+</html>
