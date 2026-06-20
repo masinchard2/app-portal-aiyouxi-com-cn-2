@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28圈 · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Noto Sans SC", "PingFang SC", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+            background: linear-gradient(145deg, #fdf6ed 0%, #f7e8d8 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.7;
+            color: #3b2e23;
+            padding: 2rem 1.2rem;
+        }
+
+        .page-wrapper {
+            max-width: 980px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* hero 横幅 */
+        .hero {
+            margin-bottom: 3rem;
+            text-align: center;
+            padding: 2.5rem 1.2rem 1.8rem;
+            background: linear-gradient(135deg, #fff7ed, #fce8d0);
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 12px 28px rgba(180, 120, 70, 0.12);
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #d9b382;
+            border-radius: 4px;
+            margin: 1.2rem auto 0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 450;
+            letter-spacing: 2px;
+            color: #4f3726;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #7a6048;
+            font-weight: 320;
+            letter-spacing: 1px;
+            border-top: 1px dashed #d9b382;
+            display: inline-block;
+            padding-top: 0.6rem;
+            margin-top: 0.2rem;
+        }
+
+        /* 白色内容卡片 */
+        .card {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(2px);
+            padding: 2.2rem 2.5rem;
+            border-radius: 36px;
+            box-shadow: 0 8px 18px rgba(140, 100, 60, 0.08);
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid rgba(255, 235, 210, 0.5);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(140, 100, 60, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 420;
+            color: #5b3f2c;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #efd7c0;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .card p {
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+            color: #3d3228;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 圆角按钮感链接 */
+        .link-button {
+            display: inline-block;
+            background: #e5cfb8;
+            color: #3d2a1b;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 430;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            border: 1px solid #d9b78e;
+            transition: background 0.25s, border-color 0.2s;
+            line-height: 1.8;
+        }
+
+        .link-button:hover {
+            background: #dbbd9c;
+            border-color: #b48d66;
+        }
+
+        /* 内嵌链接样式（非按钮） */
+        a.inline-link {
+            color: #9b6f48;
+            text-decoration: none;
+            border-bottom: 1px dotted #c7a77e;
+            font-weight: 450;
+            transition: border-bottom 0.2s;
+        }
+
+        a.inline-link:hover {
+            border-bottom: 2px solid #8b5e36;
+        }
+
+        /* 页尾 */
+        .page-footer {
+            margin-top: 2rem;
+            text-align: center;
+            padding: 2rem 1rem 1.2rem;
+            border-top: 1px solid #e9d3be;
+            color: #775f4b;
+            font-size: 0.9rem;
+            letter-spacing: 0.8px;
+            background: transparent;
+        }
+
+        .page-footer .footer-note {
+            display: inline-block;
+            background: rgba(255, 245, 232, 0.5);
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* FAQ摘要卡片（差异化） */
+        .faq-mini {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .faq-mini .qa-item {
+            flex: 1 1 200px;
+            background: #f9efe6;
+            border-radius: 28px;
+            padding: 1rem 1.3rem;
+            border: 1px solid #ead6c2;
+        }
+
+        .qa-item .q {
+            font-weight: 480;
+            color: #4a3424;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .qa-item .a {
+            color: #5e4a39;
+            font-size: 0.92rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+                border-radius: 28px;
+            }
+
+            .card h2 {
+                font-size: 1.3rem;
+            }
+
+            .hero .sub {
+                font-size: 0.95rem;
+            }
+
+            .faq-mini .qa-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <!-- hero 横幅 -->
+    <header class="hero">
+        <h1>28圈 · 回环之间</h1>
+        <div class="sub">从原点出发，沿着环形轨迹重新认识彼此</div>
+    </header>
+
+    <!-- 三段自然介绍 + 背景说明 相互融合 -->
+
+    <!-- 第一段：背景说明 + 叙事 -->
+    <section class="card">
+        <h2>环形叙述</h2>
+        <p>一条河流蜿蜒千里，最终汇入大海；而数字世界的脉络，也常常以环形的结构将分散的主题串联起来。所谓 <a href="https://m-28loop.com" class="inline-link">28圈</a>，并非某个孤立符号，而是一种观察与组织的线索——它提醒我们：每一次浏览、每一次点击，都可能成为闭环中的一环，彼此呼应，形成独特的网络路径。</p>
+        <p>许多人最初注意到它，是因为这个名字里包含的数字与形态。28 本身是完美数，也是月相周期的近似；而“圈”则暗示着循环、社区、轨迹。将二者放在一起，更像是在说：一段旅程既有限定，又无限延伸。</p>
+    </section>
+
+    <!-- 第二段：特点与场景 融合 -->
+    <section class="card">
+        <h2>节点与场景</h2>
+        <p>在实际使用中，围绕 <a href="https://m-28loop.com" class="inline-link">28圈</a> 所搭建的内容生态包含了信息聚合、话题讨论以及轻量互动。它不像传统论坛那样层层分区，而是以“圈”为单位，每个圈聚焦一个主题方向。用户可以根据兴趣进入不同圈子，也可以自己发起新的节点。</p>
+        <p>想象一个场景：傍晚时分，有人分享了一组旧照片，配上简短笔记；另一个圈子里，正在讨论近期的技术趋势。这些内容互不干扰，却又因为同属于一个大平台而潜在地连通。你可以在不同圈之间跳转，像在翻阅一本不断生长的杂志。</p>
+        <p>对许多人来说，这种结构带来的最大价值是——不再被算法单一推流，而是主动选择想看的“圈层”。信息流变得安静、可控，也更有质感。</p>
+    </section>
+
+    <!-- 第三段：感受 + FAQ摘要 (以卡片内嵌小问答形式) -->
+    <section class="card">
+        <h2>一些问答摘要</h2>
+        <p>在接触这个平台的过程中，我们汇总了几个出现频率较高的问题。这些回答并不官方，更多的是一种基于使用体验的梳理。</p>
+        <div class="faq-mini">
+            <div class="qa-item">
+                <span class="q">Q: 圈子之间是否完全隔离？</span>
+                <span class="a">A: 并非完全隔离。你可以通过统一账号在不同圈子活动，但内容不会强行混合。每个圈保留自己的氛围。</span>
+            </div>
+            <div class="qa-item">
+                <span class="q">Q: 是否需要邀请才能加入？</span>
+                <span class="a">A: 大部分开放圈子可以直接参与，少数专题圈可能需要简单申请或满足条件，整体门槛很低。</span>
+            </div>
+            <div class="qa-item">
+                <span class="q">Q: 28 这个数字有什么特殊含义？</span>
+                <span class="a">A: 有人说是月相周期，也有人认为是象征完整。不过平台本身并未明确解释，更倾向于留给每个人自己的理解。</span>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem;">如果你对其中某个话题感兴趣，不妨直接前往 <a href="https://m-28loop.com" class="link-button">28圈</a> 寻找属于你的阅读起点。</p>
+    </section>
+
+    <!-- 页尾访问提示 -->
+    <footer class="page-footer">
+        <div class="footer-note">
+            · 杂志式浏览 · 温和探索 ·
+        </div>
+        <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #8a7561;">
+            此页面仅作专题介绍，内容基于公开信息整理。
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
