@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>500万彩票网 · 信息与使用指引</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f2f7f9;
+            color: #1d2b36;
+            line-height: 1.65;
+            padding: 1.2rem 1rem 2.8rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* 网格卡片容器 */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+        }
+
+        @media (min-width: 480px) {
+            .grid-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 820px) {
+            .grid-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.5rem 1.25rem;
+            box-shadow: 0 6px 16px rgba(0, 40, 50, 0.06), 0 2px 4px rgba(0, 30, 40, 0.02);
+            transition: box-shadow 0.25s, transform 0.2s;
+            border: 1px solid rgba(0, 120, 130, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 24px rgba(0, 90, 100, 0.10);
+            transform: translateY(-3px);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 0.1rem;
+            margin-bottom: 0.5rem;
+            color: #0b4852;
+            letter-spacing: 0.02em;
+        }
+
+        .card p, .card li {
+            font-size: 0.95rem;
+            color: #2c3e4a;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.4rem;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .card ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #188b97;
+            font-weight: bold;
+        }
+
+        .badge {
+            background: #d9f0f0;
+            color: #08626b;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            letter-spacing: 0.4px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            border: 1px solid rgba(0, 140, 150, 0.1);
+        }
+
+        .hero-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            font-weight: 650;
+            color: #0d404b;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-sub {
+            color: #2f5862;
+            font-size: 1rem;
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 0.6rem 1.2rem;
+            border-radius: 60px;
+            backdrop-filter: blur(2px);
+            display: inline-block;
+            border: 1px solid rgba(0, 130, 140, 0.12);
+        }
+
+        .notice-strip {
+            background: linear-gradient(90deg, #e4f3f5 0%, #f0fbfc 100%);
+            padding: 1rem 1.4rem;
+            border-radius: 40px;
+            margin: 1.6rem 0 2rem;
+            border-left: 5px solid #1b98a6;
+            font-size: 0.95rem;
+            color: #124954;
+        }
+
+        .link-sentence {
+            background: #ffffffd9;
+            backdrop-filter: blur(4px);
+            padding: 0.9rem 1.4rem;
+            border-radius: 60px;
+            display: inline-block;
+            margin: 0.8rem 0 1.2rem;
+            border: 1px solid rgba(0, 150, 155, 0.2);
+            font-size: 0.98rem;
+        }
+
+        a {
+            color: #127886;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1.5px solid rgba(18, 120, 134, 0.2);
+            transition: border-color 0.15s, background 0.15s;
+            padding: 0.05rem 0.1rem;
+        }
+
+        a:hover, a:focus {
+            border-bottom-color: #0e6f7c;
+            background: #e2f5f7;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .faq-mini {
+            margin-top: 2.4rem;
+            background: #ffffffdd;
+            backdrop-filter: blur(3px);
+            padding: 1.6rem 1.5rem;
+            border-radius: 28px;
+            border: 1px solid rgba(50, 140, 150, 0.1);
+        }
+
+        .faq-mini h4 {
+            color: #0a4954;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 100, 110, 0.08);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #0f525f;
+        }
+
+        .faq-a {
+            color: #2b4a54;
+            margin-top: 0.1rem;
+            font-size: 0.92rem;
+        }
+
+        .extra-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 110, 120, 0.15);
+            font-size: 0.9rem;
+            color: #3b5d67;
+        }
+
+        .tagline-bluegreen {
+            color: #167582;
+            font-weight: 500;
+        }
+
+        footer {
+            margin-top: 3.2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #4a6e78;
+            border-top: 1px solid rgba(0, 120, 130, 0.08);
+            padding-top: 1.8rem;
+        }
+
+        @media (max-width: 420px) {
+            .hero-title {
+                font-size: 1.7rem;
+            }
+            .card {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- hero 区域：快速识别用途 -->
+    <div class="hero-section">
+        <div class="hero-title">关于 &nbsp;<span style="color:#0b747f;">500万彩票网</span></div>
+        <div class="hero-sub">📋 信息归类 · 使用帮助 · 常见疑问</div>
+    </div>
+
+    <!-- 自然嵌入链接的说明句 -->
+    <div class="link-sentence">
+        📍 如果你想直接访问 <a href="https://m1-500.com">500万彩票网</a>，这是它的官方站点链接。
+    </div>
+
+    <!-- 提示条 -->
+    <div class="notice-strip">
+        ⚠️ 请确认你已满法定购彩年龄，并理性看待彩票。本页仅为信息介绍与导航，不提供任何购彩通道。
+    </div>
+
+    <!-- 网格卡片：知识库入口布局 -->
+    <div class="grid-cards">
+
+        <!-- 卡片 1：站点概览 -->
+        <div class="card">
+            <span class="card-icon">🔍</span>
+            <h3>站点定位</h3>
+            <p>这是一个提供数字型彩票资讯及数据查询的平台。很多用户把它当作了解开奖结果、玩法规则的快捷渠道。</p>
+            <ul>
+                <li>高频彩与数字彩信息聚合</li>
+                <li>开奖号码与历史趋势</li>
+                <li>基础玩法介绍</li>
+            </ul>
+        </div>
+
+        <!-- 卡片 2：适合哪些人 -->
+        <div class="card">
+            <span class="card-icon">👤</span>
+            <h3>常访问人群</h3>
+            <p>习惯先看规则再下注的理性购彩者，以及想快速核对开奖号码的普通用户。页面设计偏向直给信息，减少多余步骤。</p>
+            <div style="margin-top:0.8rem;">
+                <span class="badge">新手友好</span>
+                <span class="badge" style="background:#d1ebee;">信息简明</span>
+            </div>
+        </div>
+
+        <!-- 卡片 3：场景示例 -->
+        <div class="card">
+            <span class="card-icon">📱</span>
+            <h3>常见使用场景</h3>
+            <ul>
+                <li>晚饭后查看当天开奖号码</li>
+                <li>对比不同彩种的中奖概率</li>
+                <li>查找某期开奖的详细数据</li>
+                <li>了解玩法术语和规则说明</li>
+            </ul>
+        </div>
+
+        <!-- 卡片 4：内容特点 -->
+        <div class="card">
+            <span class="card-icon">📌</span>
+            <h3>平台内容特点</h3>
+            <p>页面结构比较直接，没有多余弹窗或复杂跳转。数据更新频率较高，适合需要即时信息的用户。</p>
+            <ul>
+                <li>开奖结果列表式展示</li>
+                <li>按彩种分类导航</li>
+                <li>部分玩法附示例说明</li>
+            </ul>
+        </div>
+
+        <!-- 卡片 5：相关提示 -->
+        <div class="card">
+            <span class="card-icon">🧾</span>
+            <h3>实用提示</h3>
+            <ul>
+                <li>建议通过官方渠道验证开奖信息</li>
+                <li>了解返奖率与规则再参与</li>
+                <li>注意各彩种销售与开奖时间</li>
+            </ul>
+            <p style="margin-top:0.6rem;font-size:0.9rem;">🔹 平台提供参考数据，最终以官方公布为准。</p>
+        </div>
+
+        <!-- 卡片 6：周边信息 -->
+        <div class="card">
+            <span class="card-icon">🧩</span>
+            <h3>相关信息区</h3>
+            <p>你可以在站内找到常见彩种的术语解释，比如「直选」「组选」「和值」等。另外，部分页面会附上简单的计算示例。</p>
+            <p style="margin-top:0.6rem; background:#f3fafb; border-radius: 30px; padding:0.4rem 1rem; font-size:0.9rem;">
+                📘 如果你是初次接触，建议先阅读“玩法说明”板块。
+            </p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <h4>❓ 常见疑问摘要</h4>
+        <div class="faq-item">
+            <div class="faq-q">问：如何快速找到某期开奖号码？</div>
+            <div class="faq-a">通常进入 <a href="https://m1-500.com">500万彩票网</a> 后，首页或导航栏会按彩种列出最近开奖期号，直接点击即可。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">问：页面上的数据是实时更新的吗？</div>
+            <div class="faq-a">大部分高频彩数据延迟较低，但个别彩种可能略有滞后，建议以官方发布为最终依据。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">问：是否需要注册才能使用？</div>
+            <div class="faq-a">查询开奖结果和查看基础信息一般无需登录，具体以站点实际要求为准。</div>
+        </div>
+        <div style="margin-top:1rem; font-size:0.95rem;">
+            📌 更多细节建议直接浏览 <a href="https://m1-500.com">500万彩票网</a> 各栏目内容。
+        </div>
+    </div>
+
+    <!-- 额外信息区：平稳收尾 -->
+    <div class="extra-links">
+        <span class="tagline-bluegreen">📋 信息页 · 知识库风格</span>
+        <span>🎯 仅做介绍与指引</span>
+        <span>⚖️ 理性购彩 · 量力而行</span>
+    </div>
+
+    <footer>
+        <div>本页为独立介绍页面 · 内容仅供信息参考</div>
+        <div style="margin-top:0.3rem; opacity:0.7;">请确认所在地法律法规允许后再进行相关操作</div>
+    </footer>
+
+</div>
+</body>
+</html>
